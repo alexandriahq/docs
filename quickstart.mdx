@@ -21,17 +21,37 @@ Ambient is currently invite-only. After you receive access, download Ambient App
   </Step>
 
   <Step title="Download Ambient">
-    Download the newest Ambient App build for your operating system.
+    Download Ambient App. Open it, then follow setup to install Bridge through Ambient.
 
-    <CardGroup cols={2}>
-      <Card title="Download for macOS" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/darwin/arm64/latest.dmg">
-        Download the Apple Silicon DMG.
-      </Card>
+    <a
+      href="https://alexandria.so/download"
+      style={{
+        alignItems: "center",
+        background: "#111111",
+        borderRadius: "999px",
+        color: "#ffffff",
+        display: "inline-flex",
+        fontWeight: 500,
+        gap: "0.5rem",
+        lineHeight: 1,
+        marginTop: "0.75rem",
+        padding: "0.75rem 1.2rem",
+        textDecoration: "none"
+      }}
+    >
+      <span>Download Ambient</span>
+      <span aria-hidden="true">&darr;</span>
+    </a>
 
-      <Card title="Download for Windows" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/win32/x64/latest.exe">
-        Download the Windows x64 EXE.
-      </Card>
-    </CardGroup>
+    <AccordionGroup>
+      <Accordion title="macOS">
+        [Download Ambient App for macOS](https://api.alexandria.so/downloads/apps/ambient-app/alpha/darwin/arm64/latest.dmg)
+      </Accordion>
+
+      <Accordion title="Windows">
+        [Download Ambient App for Windows](https://api.alexandria.so/downloads/apps/ambient-app/alpha/win32/x64/latest.exe)
+      </Accordion>
+    </AccordionGroup>
   </Step>
 
   <Step title="Install Ambient App">
