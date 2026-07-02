@@ -1,92 +1,93 @@
 ---
-title: "Get Started with Ambient"
-sidebarTitle: "Quickstart"
-description: "Install Ambient App and Ambient Bridge, complete local capture setup, and verify that Ambient is building context, memory, and handoffs from your work."
+title: "Install Ambient"
+sidebarTitle: "Installation"
+description: "Install Ambient, sign in, choose what to capture, and connect your coding agent."
 ---
 
-Ambient is Alexandria's open-source data-mining runtime for enterprise laptops. It captures reasoning and action traces from high-stakes computer work, turns them into local structured context, and helps agents understand long-running human tasks.
-
-Ambient currently ships as two desktop apps:
-
-- **Ambient App** — the local Electron app that owns capture, context workers, the encrypted `ambient.sqlite` database, memory, intents, and handoffs.
-- **Ambient Bridge** — the companion app that owns WorkOS sign-in, local pairing, diagnostics, and the only public-network egress path for inference.
+Ambient is currently invite-only. After you receive access, install the desktop app and complete the setup flow.
 
 <Note>
-  Ambient is local-first. Ambient App does not talk directly to the public internet. When remote inference is used, Ambient talks to Bridge over authenticated OS IPC; Bridge talks to Alexandria Server; the server forwards encrypted requests to Tinfoil.
+  Look for an invite email from Alexandria or `access@workos.dev`. If you do not see it, check your spam folder.
 </Note>
 
+## Install
+
 <Steps>
-  <Step title="Get the release links">
-    Use the product-scoped release links provided by your Alexandria workspace, deployment admin, or release channel.
+  <Step title="Sign up">
+    Open your Ambient invite and create your account.
 
-    You need both products:
-
-    - `ambient-app` — Ambient App
-    - `ambient-bridge` — Ambient Bridge
-
-    For experimental builds, use the exact versioned links from the release comment or deployment note. Avoid moving "latest" links for experimental Windows builds.
+    Ambient uses WorkOS for sign-in, so the access email may come from `access@workos.dev`.
   </Step>
-  <Step title="Install both desktop apps">
-    On macOS, install both apps from their `.dmg` files and launch them from **Applications**.
 
-    For realistic capture and permission testing, use a signed/notarized build. macOS permissions are tied to the app bundle identity and code signature, so ad-hoc or dev builds can lose grants after rebuilds.
+  <Step title="Download Ambient">
+    Click **Download App** in the top navigation and choose the newest build for macOS or Windows.
   </Step>
-  <Step title="Sign in to Ambient Bridge">
-    Open **Ambient Bridge** first and sign in through the browser.
 
-    Bridge uses WorkOS for account auth and stores the sealed session in the OS keychain. Keep Bridge running; Ambient App uses it for account state, pairing, and inference egress.
+  <Step title="Install Ambient">
+    Open the installer and launch Ambient.
+
+    On macOS, move Ambient to **Applications** if prompted. On Windows, follow the installer prompts.
   </Step>
-  <Step title="Open Ambient App and pair with Bridge">
-    Open **Ambient App**.
 
-    Ambient discovers Bridge through a signed local descriptor and connects over OS IPC. If Bridge asks you to approve a pairing request, approve it to let Ambient App make authenticated local requests.
+  <Step title="Install Bridge">
+    Ambient will guide you through installing Ambient Bridge.
+
+    Bridge handles sign-in and agent connections for the desktop app.
   </Step>
-  <Step title="Choose what Ambient can capture">
-    During setup, choose the local signals Ambient should use.
 
-    The current capture policy supports sources such as screenshots, microphone audio, system audio, keyboard input metadata, active app/window metadata, and accessibility-derived context. Screenshots are currently treated as a required source in setup so Ambient can understand visible work.
+  <Step title="Sign in">
+    Sign in with the account from your invite.
 
-    You can also exclude private apps, system-audio sources, and browser URL patterns before capture runs.
+    Keep Bridge running after sign-in. Ambient uses it to connect securely to your account and integrations.
   </Step>
-  <Step title="Grant system permissions">
-    Ambient App owns capture permissions. Grant the macOS permissions requested by the setup flow.
 
-    Depending on enabled sources, this may include **Screen Recording**, **Microphone**, **Accessibility**, **Input Monitoring**, and system-audio related access. Some grants require restarting Ambient App before capture can work.
+  <Step title="Give permissions">
+    Grant the permissions Ambient asks for during setup.
+
+    These may include screen recording, accessibility, microphone, input monitoring, and other system permissions depending on what you enable.
   </Step>
-  <Step title="Verify capture is running">
-    Open Ambient App and check the capture/status surfaces.
 
-    The **Feed** should begin showing recent context chunks after capture and context processing run. The **Permissions** and capture settings surfaces show whether sources are healthy, blocked, or not producing artifacts.
+  <Step title="Configure capture">
+    Choose what Ambient can capture.
+
+    You can allow the sources you want and exclude private apps, domains, or workflows before Ambient starts learning from your activity.
   </Step>
-  <Step title="Review memory and handoffs">
-    Use the **Memory** view to inspect the local Markdown memory graph, and use **Handoffs** to review agent-ready work.
 
-    A handoff is a structured plan tied to an inferred intent. You can review its steps, refine them, deny the handoff, or accept it and open the configured agent flow.
+  <Step title="Connect Codex or Claude Code">
+    Connect your coding agent from the Ambient setup flow or from **Settings** > **Integrations**.
+
+    Once connected, Ambient can prepare context and handoffs for that agent.
+  </Step>
+
+  <Step title="Start working">
+    You're done.
+
+    Ambient runs in the background by default. Keep working as usual and let Ambient build memory from your active work.
   </Step>
 </Steps>
 
-## What Ambient Is Building
+## Optional setup
 
-Ambient is not a generic screen recorder or time tracker. It is a local memory and task-mining layer for long-horizon work.
-
-The system turns captured activity into chunks, observations, intents, memory, and handoffs so agents can reason from the user's real working timeline instead of starting from an empty prompt.
-
-## What's Next
+After the basics work, connect Ambient to the tools you use every day.
 
 <CardGroup cols={2}>
-  <Card title="Architecture" icon="waypoints">
-    Learn how Ambient App, Bridge, Server, and Tinfoil fit together.
+  <Card title="Integrations" icon="plug" href="/guides/integrations">
+    Connect Codex, Claude Code, and your favorite work tools.
   </Card>
 
-  <Card title="Privacy Model" icon="shield">
-    Understand what stays local, what Bridge can access, and what never goes into logs.
+  <Card title="Memory" icon="brain" href="/guides/memory">
+    Review what Ambient has learned.
+  </Card>
+</CardGroup>
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="Get started" icon="arrow-right" href="/introduction">
+    Learn what to do once Ambient is running.
   </Card>
 
-  <Card title="Capture Policy" icon="sliders">
-    Configure sources, private app exclusions, system-audio exclusions, and browser URL exclusions.
-  </Card>
-
-  <Card title="Agent Handoffs" icon="share">
-    Review how Ambient turns long-running intents into step-by-step agent work.
+  <Card title="Handoffs" icon="bell" href="/guides/handoffs">
+    Use Ambient to package work for an agent.
   </Card>
 </CardGroup>

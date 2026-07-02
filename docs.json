@@ -20,8 +20,16 @@
           {
             "group": "Get Started",
             "pages": [
-              "introduction",
-              "quickstart"
+              "quickstart",
+              "introduction"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/memory",
+              "guides/integrations",
+              "guides/handoffs"
             ]
           }
         ]
