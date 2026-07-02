@@ -2,6 +2,7 @@
 title: "Install Ambient"
 sidebarTitle: "Installation"
 description: "Install Ambient, sign in, choose what to capture, and connect your coding agent."
+mode: "wide"
 ---
 
 Ambient is currently invite-only. After you receive access, install the desktop app and complete the setup flow.
@@ -20,19 +21,37 @@ Ambient is currently invite-only. After you receive access, install the desktop 
   </Step>
 
   <Step title="Download Ambient">
-    Click **Download App** in the top navigation and choose the newest build for macOS or Windows.
-  </Step>
+    Download both installers for your operating system. Install **Ambient Bridge** first, then **Ambient App**.
 
-  <Step title="Install Ambient">
-    Open the installer and launch Ambient.
+    <CardGroup cols={2}>
+      <Card title="macOS: Ambient Bridge" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-bridge/alpha/darwin/arm64/latest.dmg">
+        Step 1 of 2. Download the Apple Silicon DMG.
+      </Card>
 
-    On macOS, move Ambient to **Applications** if prompted. On Windows, follow the installer prompts.
+      <Card title="macOS: Ambient App" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/darwin/arm64/latest.dmg">
+        Step 2 of 2. Download the Apple Silicon DMG.
+      </Card>
+
+      <Card title="Windows: Ambient Bridge" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-bridge/alpha/win32/x64/latest.exe">
+        Step 1 of 2. Download the Windows x64 EXE.
+      </Card>
+
+      <Card title="Windows: Ambient App" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/win32/x64/latest.exe">
+        Step 2 of 2. Download the Windows x64 EXE.
+      </Card>
+    </CardGroup>
   </Step>
 
   <Step title="Install Bridge">
-    Ambient will guide you through installing Ambient Bridge.
+    Open the Ambient Bridge installer and launch Bridge.
 
     Bridge handles sign-in and agent connections for the desktop app.
+  </Step>
+
+  <Step title="Install Ambient App">
+    Open the Ambient App installer and launch Ambient.
+
+    On macOS, move Ambient to **Applications** if prompted. On Windows, follow the installer prompts.
   </Step>
 
   <Step title="Sign in">
