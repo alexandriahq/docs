@@ -5,7 +5,7 @@ description: "Install Ambient, sign in, choose what to capture, and connect your
 mode: "wide"
 ---
 
-Ambient is currently invite-only. After you receive access, install both desktop apps and complete the setup flow.
+Ambient is currently invite-only. After you receive access, download Ambient App and complete the setup flow.
 
 <Note>
   Look for an invite email from Alexandria or `access@workos.dev`. If you do not see it, check your spam folder.
@@ -21,37 +21,29 @@ Ambient is currently invite-only. After you receive access, install both desktop
   </Step>
 
   <Step title="Download Ambient">
-    Download both installers for your operating system. Install **Ambient Bridge** first, then **Ambient App**.
+    Download the newest Ambient App build for your operating system.
 
     <CardGroup cols={2}>
-      <Card title="macOS: Ambient Bridge" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-bridge/alpha/darwin/arm64/latest.dmg">
-        Step 1 of 2. Download the Apple Silicon DMG.
+      <Card title="Download for macOS" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/darwin/arm64/latest.dmg">
+        Download the Apple Silicon DMG.
       </Card>
 
-      <Card title="macOS: Ambient App" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/darwin/arm64/latest.dmg">
-        Step 2 of 2. Download the Apple Silicon DMG.
-      </Card>
-
-      <Card title="Windows: Ambient Bridge" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-bridge/alpha/win32/x64/latest.exe">
-        Step 1 of 2. Download the Windows x64 EXE.
-      </Card>
-
-      <Card title="Windows: Ambient App" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/win32/x64/latest.exe">
-        Step 2 of 2. Download the Windows x64 EXE.
+      <Card title="Download for Windows" icon="download" href="https://api.alexandria.so/downloads/apps/ambient-app/alpha/win32/x64/latest.exe">
+        Download the Windows x64 EXE.
       </Card>
     </CardGroup>
-  </Step>
-
-  <Step title="Install Bridge">
-    Open the Ambient Bridge installer and launch Bridge.
-
-    Bridge handles WorkOS sign-in, local pairing, delegated integration tokens, and the network path Ambient uses for remote inference.
   </Step>
 
   <Step title="Install Ambient App">
     Open the Ambient App installer and launch Ambient.
 
     On macOS, move Ambient to **Applications** if prompted. On Windows, follow the installer prompts.
+  </Step>
+
+  <Step title="Install Bridge through Ambient">
+    Ambient will guide you through installing Ambient Bridge.
+
+    Bridge handles WorkOS sign-in, local pairing, delegated integration tokens, and the network path Ambient uses for remote inference.
   </Step>
 
   <Step title="Sign in">
