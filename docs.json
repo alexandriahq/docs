@@ -3,9 +3,9 @@
   "name": "Ambient",
   "theme": "almond",
   "colors": {
-    "primary": "#536F19",
-    "light": "#E5EDD2",
-    "dark": "#2F420B"
+    "primary": "#111111",
+    "light": "#555555",
+    "dark": "#111111"
   },
   "favicon": "/favicon.svg",
   "logo": {
