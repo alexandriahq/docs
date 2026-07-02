@@ -3,11 +3,15 @@
   "name": "Ambient",
   "theme": "almond",
   "colors": {
-    "primary": "#ef7025",
-    "light": "#eec9bc",
-    "dark": "#4fa1ab"
+    "primary": "#536F19",
+    "light": "#E5EDD2",
+    "dark": "#2F420B"
   },
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
   "navigation": {
     "tabs": [
       {
