@@ -6,25 +6,25 @@ description: "Start using Ambient after installation."
 
 Once setup is complete, Ambient runs by default.
 
-You do not need to start a session or write notes manually. Keep working and Ambient will build memory from the activity you allowed it to capture.
+You do not need to start a session manually. Keep working and Ambient will process the capture sources you enabled into context chunks, intents, memory notes, and handoffs.
 
 ## What to do next
 
 <CardGroup cols={2}>
-  <Card title="Keep working" icon="laptop" href="/guides/memory">
-    Ambient learns from your normal workflow in the background.
+  <Card title="Watch the feed" icon="inbox" href="#daily-workflow">
+    Review processed context chunks grouped by intent.
   </Card>
 
-  <Card title="Open the live overlay" icon="up-right-from-square" href="/guides/memory#use-the-live-overlay">
-    Click the pop-out icon to see recent captures as they happen.
+  <Card title="Open live recording overlay" icon="up-right-from-square" href="#watch-capture-live">
+    Inspect recent recording outputs without opening the full app.
   </Card>
 
   <Card title="Check memory" icon="book-open" href="/guides/memory#review-memory">
-    Periodically review what Ambient has learned.
+    Review long-term notes Ambient wrote from durable evidence.
   </Card>
 
   <Card title="Use handoffs" icon="bell" href="/guides/handoffs">
-    Watch for handoff notifications when Ambient finds agent-ready work.
+    Accept, refine, or deny ready-for-handoff intents.
   </Card>
 </CardGroup>
 
@@ -34,30 +34,38 @@ You do not need to start a session or write notes manually. Keep working and Amb
   <Step title="Work normally">
     Use your editor, browser, terminal, meetings, and docs as usual.
 
-    Ambient observes the sources you enabled and turns them into useful context.
+    Ambient observes the sources you enabled and writes local recording outputs.
   </Step>
 
-  <Step title="Use the overlay when you want visibility">
-    Click the pop-out icon in Ambient to open the live overlay.
+  <Step title="Check Feed">
+    Open **Feed** to see processed context chunks.
 
-    The overlay helps you confirm what Ambient is seeing without interrupting your work.
+    Chunks are the short summaries Ambient creates from recent capture outputs. When a chunk is linked to an intent, Feed groups it under that intent.
   </Step>
 
-  <Step title="Review memory occasionally">
-    Open **Memory** to see what Ambient has learned.
+  <Step title="Connect private app context">
+    Open **Integrations** to connect apps like Todoist, Notion, Gmail, Google Calendar, Granola, and Toggl Track.
 
-    Use it to check that important work is represented and private work is excluded.
+    During intent review, Ambient can use read-only integration tools before deciding that information is missing.
   </Step>
 
   <Step title="Respond to handoff notifications">
-    When Ambient finds work an agent can take on, it sends a handoff notification.
+    When Ambient creates a handoff, review the ordered steps.
 
-    Review the proposed task, then accept it, adjust it, or ignore it.
+    Accept it to open the task in your configured agent, or deny it if the work should stay with you.
   </Step>
 </Steps>
 
+## Watch capture live
+
+Use the live recording overlay when you want visibility into capture itself.
+
+The overlay shows recent finalized recording outputs such as active app/window changes, screen-derived text, audio transcripts, and keyboard activity metadata. It is a capture monitor, not the long-term memory view.
+
+On supported platforms, Ambient uses a native glass overlay. Otherwise it falls back to an HTML overlay window.
+
 <Note>
-  Ambient only learns from capture sources and integrations you enable. You can update capture settings at any time.
+  Ambient only captures sources you enable and skips the apps, audio sources, and browser URLs you exclude. Update those rules from **Permissions**.
 </Note>
 
 ## Next
@@ -68,10 +76,10 @@ You do not need to start a session or write notes manually. Keep working and Amb
   </Card>
 
   <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Connect Ambient to your tools.
+    Connect private apps Ambient can read.
   </Card>
 
   <Card title="Handoffs" icon="share" href="/guides/handoffs">
-    Let Ambient prepare work for agents.
+    Review agent-ready work.
   </Card>
 </CardGroup>

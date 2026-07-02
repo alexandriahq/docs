@@ -4,47 +4,51 @@ sidebarTitle: "Home"
 description: "Ambient runs in the background, learns your work, and gives coding agents the context they need to pick up where you left off."
 ---
 
-Ambient is memory for your computer.
+Ambient is a local context layer for your computer.
 
-Install the desktop app, choose what Ambient can capture, then keep working. Ambient builds a private memory of your active work and prepares handoffs for tools like Codex and Claude Code.
+Install Ambient, choose what it can capture, then keep working. Ambient turns local activity into context chunks, maintains open intents, writes durable memory notes, and prepares handoffs when an agent can continue the work.
 
 <CardGroup cols={2}>
   <Card title="Install Ambient" icon="download" href="/quickstart">
-    Set up Ambient, sign in, grant permissions, and connect your first agent.
+    Install Bridge and Ambient App, grant permissions, and choose capture sources.
   </Card>
 
   <Card title="Get started" icon="arrow-right" href="/introduction">
-    Learn what to do after Ambient is running.
+    Learn the main app surfaces after setup.
   </Card>
 
-  <Card title="Memory" icon="brain" href="/guides/memory">
-    See what Ambient has learned from your work.
+  <Card title="Integrations" icon="plug" href="/guides/integrations">
+    Connect private apps like Todoist, Notion, Gmail, Google Calendar, Granola, and Toggl Track.
   </Card>
 
   <Card title="Handoffs" icon="bell" href="/guides/handoffs">
-    Let Ambient package extra work for your coding agent.
+    Review agent-ready tasks before sending them to Codex or Claude Code.
   </Card>
 </CardGroup>
 
 ## How it works
 
-Ambient stays out of the way by default.
+Ambient separates capture, memory, integrations, and handoffs.
 
 <Steps>
   <Step title="Install">
-    Download the latest Ambient app for macOS or Windows.
+    Install **Ambient Bridge** and **Ambient App**.
+
+    Bridge owns sign-in and network egress. Ambient App owns local capture, storage, processing, memory, and handoffs.
   </Step>
 
   <Step title="Choose what to capture">
-    Pick the apps, windows, and activity sources Ambient can use.
+    Enable local sources such as screen, microphone, system audio, keyboard metadata, active app/window, and accessibility context.
+
+    Exclude private apps, media apps, and browser URLs before capture starts.
   </Step>
 
-  <Step title="Keep working">
-    Ambient runs in the background and builds memory from your normal workflow.
+  <Step title="Build context">
+    Ambient writes redacted recording outputs, groups them into context chunks, and tracks open intents over time.
   </Step>
 
   <Step title="Hand off work">
-    When Ambient sees a task an agent can help with, it prepares the context and notifies you.
+    When an intent is specific enough for an agent, Ambient creates a reviewed handoff with ordered steps.
   </Step>
 </Steps>
 
@@ -56,15 +60,15 @@ Ambient stays out of the way by default.
   </Card>
 
   <Card title="Review memory" icon="book-open" href="/guides/memory">
-    Check what Ambient has learned.
+    Inspect long-term project, person, and workflow notes.
   </Card>
 
-  <Card title="Connect tools" icon="plug" href="/guides/integrations">
-    Link Ambient to Codex, Claude Code, and other tools.
+  <Card title="Connect apps" icon="plug" href="/guides/integrations">
+    Let Ambient read private app context during intent review.
   </Card>
 
   <Card title="Use handoffs" icon="share" href="/guides/handoffs">
-    Send well-scoped tasks to an agent.
+    Accept, refine, or deny agent-ready work.
   </Card>
 </CardGroup>
 

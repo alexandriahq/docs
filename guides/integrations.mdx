@@ -1,61 +1,83 @@
 ---
 title: "Integrations"
 sidebarTitle: "Integrations"
-description: "Connect Ambient to Codex, Claude Code, and the tools you use every day."
+description: "Connect private apps that Ambient can read during intent review."
 ---
 
-Integrations let Ambient pass useful context to the tools where work happens.
+Integrations are app connections Ambient can read for private context.
 
-Start with your coding agent, then add the work tools you want Ambient to understand.
+They are not Codex or Claude Code connections. Codex and Claude Code are agent toolchains for handoffs. Integrations are apps such as Todoist, Notion, Gmail, Google Calendar, Granola, and Toggl Track that Ambient can query while maintaining intents.
 
-## Connect a coding agent
+## Supported apps
 
-Ambient supports connecting agent tools such as Codex and Claude Code.
+Ambient currently exposes first-party integration toolkits for:
+
+- **Todoist** for tasks, projects, labels, and due dates.
+- **Notion** for pages, databases, project notes, and workspace search.
+- **Gmail** for email threads, senders, unread context, and message search.
+- **Google Calendar** for calendars, events, attendees, and meeting times.
+- **Granola** for meeting notes, transcripts, decisions, and action items.
+- **Toggl Track** for time entries, projects, clients, and workspaces.
+
+## Connect an app
 
 <Steps>
   <Step title="Open integrations">
-    In Ambient, open **Settings** > **Integrations**.
+    In Ambient, open **Integrations** from the sidebar.
   </Step>
 
-  <Step title="Choose your agent">
-    Select **Codex** or **Claude Code**.
+  <Step title="Choose an app">
+    Select a toolkit such as **Todoist**, **Notion**, **Gmail**, **Google Calendar**, **Granola**, or **Toggl Track**.
   </Step>
 
-  <Step title="Follow the setup flow">
-    Ambient will install or configure the local connection it needs.
+  <Step title="Authorize the connection">
+    Ambient asks Bridge for a scoped integration token and opens the provider authorization flow.
 
-    Keep Ambient Bridge running while you connect the agent.
+    Keep Bridge running while the connection completes.
   </Step>
 
   <Step title="Verify the connection">
-    Return to **Integrations** and confirm the agent is connected.
+    Return to **Integrations** and confirm the app shows an active connection.
   </Step>
 </Steps>
 
-## Add more tools
+## How Ambient uses integrations
 
-Connect the tools that contain important project context.
+During the intent loop, Ambient can use connected integrations before deciding that an intent is blocked by private information.
 
-Examples include editors, terminals, browsers, issue trackers, docs tools, and communication apps. The more relevant context Ambient can see, the better its memory and handoffs become.
+For example:
 
-<Tip>
-  You do not need to connect everything on day one. Start with the tools you use for active work, then add more as needed.
-</Tip>
+- meeting or scheduling questions may need Google Calendar;
+- email commitments may need Gmail;
+- open tasks or deadlines may need Todoist;
+- specs or durable notes may need Notion;
+- meeting decisions may need Granola;
+- recent project time context may need Toggl Track.
+
+Ambient searches the available read tools, loads the needed schema, and executes read-only calls. Results are used to refine intent summaries, blockers, memory candidates, and handoff readiness.
+
+<Warning>
+  Integration reads may contain private account data. Ambient should use only relevant context and should not copy unrelated private content into handoff instructions.
+</Warning>
 
 ## Manage an integration
 
-Use **Settings** > **Integrations** to update or remove a connection.
+Use **Integrations** to reconnect or disconnect an app.
 
-If an integration becomes noisy, disconnect it or adjust capture rules for that app or domain.
+The server controls the supported toolkit allowlist and the read-only tool policy. Write actions are blocked by default.
+
+<Note>
+  Toggl Track summaries are managed under **Automations**. When enabled, Ambient can summarize processed context that overlaps Toggl time entries and write that summary into the entry description.
+</Note>
 
 ## Next
 
 <CardGroup cols={2}>
   <Card title="Memory" icon="brain" href="/guides/memory">
-    Review what connected tools add to Ambient memory.
+    See how durable notes differ from integration reads.
   </Card>
 
   <Card title="Handoffs" icon="share" href="/guides/handoffs">
-    Send integrated context to your agent.
+    Review how private app context can inform a handoff.
   </Card>
 </CardGroup>

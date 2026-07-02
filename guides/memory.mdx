@@ -4,45 +4,47 @@ sidebarTitle: "Memory"
 description: "Review what Ambient has learned from your work."
 ---
 
-Ambient memory is the running context of your work.
+Ambient memory is long-term context, not the live capture feed.
 
-It is built from the capture sources and integrations you enable. Use it to see what Ambient understands before you ask an agent to help.
+The intent loop writes durable Markdown notes when current evidence contains a useful project, person, or workflow fact. Those notes appear in **Memory** as a list or graph.
 
 ## Review memory
 
 Open **Memory** from the Ambient app.
 
-Memory shows the work Ambient has learned over time: active goals, recurring projects, useful facts, and recent context. Review it periodically to make sure important work is represented clearly.
+Memory shows notes from the local `memories/` tree beside the active Ambient database. Notes are grouped into:
 
-## Use the live overlay
+- **Projects** for durable work, repos, products, and initiatives.
+- **People** for collaborators and relationship context.
+- **Workflows** for repeated processes and recurring ways of working.
 
-Click the pop-out icon to open the live overlay.
-
-The overlay shows recent captures while you work. Use it when you want to confirm that Ambient is running, see what it is learning, or check whether a source is too noisy.
+Open a note to inspect its body, related wikilinks, source evidence, confidence, and last update time.
 
 ## Keep memory useful
 
-Good memory comes from normal work plus clear capture settings.
+Memory is background context. Chunk evidence, intent state, and integration tool results remain the source of truth for handoff decisions.
 
 <Steps>
   <Step title="Keep working">
-    Ambient learns in the background. You do not need to manually start or stop a session.
+    Ambient builds context chunks and intents from the capture sources you enabled.
   </Step>
 
-  <Step title="Check what Ambient learned">
-    Open **Memory** after a focused work block or at the end of the day.
+  <Step title="Let the intent loop run">
+    The intent loop reviews open intents and writes memory notes only when the evidence is durable enough.
   </Step>
 
-  <Step title="Tune capture">
-    If Ambient is missing context, enable the relevant source or integration.
+  <Step title="Review notes">
+    Use **Memory** to confirm the durable facts are useful, specific, and not duplicated.
+  </Step>
 
-    If Ambient is capturing private or noisy work, exclude that app, domain, or workflow.
+  <Step title="Tune inputs">
+    If memory is missing important facts, adjust capture or connect relevant app integrations. If memory is noisy, narrow capture or exclude private surfaces.
   </Step>
 </Steps>
 
 ## When to check memory
 
-- Before asking an agent to continue work.
+- Before accepting a handoff that depends on long-running context.
 - After changing capture settings.
 - After a long debugging or research session.
 - When a handoff notification feels surprising.
@@ -51,10 +53,10 @@ Good memory comes from normal work plus clear capture settings.
 
 <CardGroup cols={2}>
   <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Connect the tools that make memory more complete.
+    Connect private apps that can supply missing context.
   </Card>
 
   <Card title="Handoffs" icon="bell" href="/guides/handoffs">
-    Use memory to send better tasks to agents.
+    See how memory informs reviewed handoffs.
   </Card>
 </CardGroup>
