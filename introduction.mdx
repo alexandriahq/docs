@@ -1,0 +1,93 @@
+---
+title: "Ambient: Local-First Memory for Long-Horizon Work"
+sidebarTitle: "Introduction"
+description: "Ambient captures reasoning and action traces from high-stakes computer work, turns them into private structured memory, and gives agents the continuity they need to operate over real timelines."
+---
+
+Ambient is a local-first memory and task-mining runtime for your computer. It captures the flow of work on an enterprise laptop, turns activity into structured context, and helps AI agents understand what a person is trying to do across hours, days, and projects.
+
+Alexandria builds systems for learning from niche, high-stakes knowledge workers. Ambient is the open-source runtime at the center of that work: a desktop layer that observes reasoning and action traces, stores private context locally, and prepares the memory substrate needed for agentic clones of human employees.
+
+## The Problem Ambient Solves
+
+Today’s AI agents are powerful, but they are still mostly episodic. They wake up inside a prompt, receive a short briefing, act for a while, and then lose the thread.
+
+Real work does not happen that way. A quant researcher, biotech operator, engineer, or analyst builds context over weeks: what they tried, why it failed, what they deferred, which tools they used, and which implicit goals are still alive.
+
+Ambient gives agents continuity. It captures work as it happens, organizes it into observations and intents, and makes long-horizon task state available when an agent needs to help.
+
+## How Ambient Works
+
+Ambient runs as a local desktop system with three main product surfaces:
+
+1. **Ambient App** — the Electron desktop app that owns capture, local context workers, and the encrypted local SQLite database.
+2. **Native capture modules** — app-owned OS integrations for signals like screen, audio, input, and active-window context.
+3. **Ambient Bridge** — the paired desktop app that owns WorkOS auth, secure IPC, and the only public-network egress path for inference.
+
+The high-level flow:
+
+1. **Capture** — Ambient records local work signals from the desktop.
+2. **Redact** — sensitive data is filtered before becoming durable context.
+3. **Store** — redacted context is written to encrypted local `ambient.sqlite`.
+4. **Structure** — workers chunk activity into observations, intents, memory, and handoff state.
+5. **Mine** — Ambient detects long-running tasks, repeated workflows, stuck loops, and agent opportunities.
+6. **Hand off** — when useful, Ambient prepares structured context for an AI agent to continue the work.
+
+<Note>
+  Ambient is local-first. The product database lives on the user’s machine, and Ambient App does not talk directly to the public internet. When remote inference is used, it goes through Ambient Bridge, the server, and encrypted Tinfoil execution.
+</Note>
+
+## Why Local-First Matters
+
+Ambient observes sensitive work. That makes trust the product boundary, not a feature checkbox.
+
+Your working memory should not begin as cloud telemetry. Ambient stores the canonical context locally, keeps the desktop app offline from public internet access, and routes inference through a separate Bridge process with explicit authentication and pairing.
+
+This architecture lets Ambient learn from real work while preserving a clear security model:
+
+- local capture and context stay in the app-owned database;
+- Bridge owns account auth and network egress;
+- server owns auth, quota, usage, and routing;
+- encrypted inference runs through Tinfoil;
+- logs and diagnostics must not contain plaintext work content.
+
+## Who Ambient Is For
+
+Ambient is built for high-context computer work where the value is in tacit process, not just final documents.
+
+**Quant finance teams** can capture how researchers investigate signals, debug models, evaluate trades, and move between tools.
+
+**Pharma and biotech operators** can preserve reasoning trails across research, analysis, compliance, and operational workflows.
+
+**Engineering teams** can give coding agents real project continuity: what changed, what failed, what remains open, and why.
+
+**Any expert team** can use Ambient to turn human work traces into an agent-readable memory layer.
+
+## What Ambient Is Not
+
+**Ambient is not employee surveillance.** It is a memory and task-understanding runtime for building useful agents from work traces.
+
+**Ambient is not a time tracker.** It cares about semantic progress, intent, workflow, and handoff readiness, not productivity scoring.
+
+**Ambient is not a cloud activity recorder.** The canonical product state is local, encrypted, and app-owned.
+
+**Ambient is not just a personal notes app.** It is infrastructure for long-horizon agent learning from real computer activity.
+
+## Key Concepts
+
+| Concept | What it is |
+| --- | --- |
+| **Recordings** | Captured local activity signals from the desktop. |
+| **Chunks** | Bounded windows of redacted activity used for context analysis. |
+| **Observations** | Meaningful summaries of what happened in a chunk. |
+| **Intents** | Evolving goals inferred from repeated or related observations. |
+| **Memory** | Durable local context, including SQLite state and editable Markdown memory. |
+| **Handoffs** | Structured instructions that let an agent pick up a task with context. |
+
+## What Ambient Enables
+
+Ambient makes it possible to build agents that understand work over time.
+
+Instead of asking “what should the agent do from this prompt?”, Ambient asks: what has this person been trying to accomplish, what evidence do we have, what changed recently, and where could an agent help next?
+
+That is the path from short-lived assistants to agentic clones that can learn from expert workflows and operate with real continuity.

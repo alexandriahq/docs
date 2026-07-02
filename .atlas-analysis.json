@@ -1,0 +1,88 @@
+{
+  "projectType": "saas",
+  "projectName": "Ambient",
+  "projectDescription": "A local-first continual learning system that turns everyday computer activity into durable, private memory and context for AI agents.",
+  "theme": "almond",
+  "primaryColor": "#ef7025",
+  "lightColor": "#eec9bc",
+  "darkColor": "#4fa1ab",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "account-setup"
+            ]
+          },
+          {
+            "group": "How It Works",
+            "pages": [
+              "concepts/overview",
+              "concepts/memory-and-context",
+              "concepts/observations-and-intents",
+              "concepts/tasks-and-handoffs"
+            ]
+          },
+          {
+            "group": "Privacy & Security",
+            "pages": [
+              "security/local-first",
+              "security/data-redaction",
+              "security/encryption"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/capture-settings",
+              "configuration/privacy-controls",
+              "configuration/agent-bridge"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/daily-workflow",
+              "guides/agent-handoffs",
+              "guides/reviewing-memory"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/faq",
+              "troubleshooting/common-issues"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Continuous capture of desktop activity via Electron app",
+    "Local-first encrypted SQLite storage — data never leaves your machine by default",
+    "Automatic PII redaction before any data is stored",
+    "Observation chunking that converts raw activity into structured memory",
+    "Intent tracking to follow evolving goals and tasks over time",
+    "Long-horizon task mining across work sessions",
+    "Agent handoff preparation — generates rich context summaries for AI agents",
+    "Secure WorkOS authentication",
+    "Bridge for optional server sync and Tinfoil inference via encrypted egress"
+  ],
+  "publicApiSurface": [
+    "Desktop app: capture toggle (start/pause recording)",
+    "Desktop app: privacy controls (blocklist apps, domains, time windows)",
+    "Desktop app: memory review interface (browse observations, intents, tasks)",
+    "Desktop app: agent handoff export",
+    "Bridge: account sign-in / sign-out via WorkOS",
+    "Bridge: local device pairing",
+    "Bridge: server sync toggle",
+    "Configuration: capture sensitivity settings",
+    "Configuration: redaction rules"
+  ]
+}
