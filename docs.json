@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "Ambient",
   "description": "Documentation for Ambient, the local context layer that helps agents continue your work.",
-  "theme": "willow",
+  "theme": "maple",
   "colors": {
     "primary": "#277487",
     "light": "#83C1C1",
@@ -24,22 +24,6 @@
   },
   "icons": {
     "library": "lucide"
-  },
-  "background": {
-    "decoration": "gradient",
-    "color": {
-      "light": "#EDF7F5",
-      "dark": "#06252C"
-    }
-  },
-  "styling": {
-    "eyebrows": "breadcrumbs",
-    "codeblocks": {
-      "theme": {
-        "light": "github-light",
-        "dark": "github-dark"
-      }
-    }
   },
   "favicon": "/logo/ambient-mark.png",
   "logo": {
