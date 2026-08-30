@@ -1,13 +1,47 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "name": "Alexandria",
-  "theme": "almond",
+  "name": "Ambient",
+  "description": "Documentation for Ambient, the local context layer that helps agents continue your work.",
+  "theme": "willow",
   "colors": {
-    "primary": "#111111",
-    "light": "#555555",
-    "dark": "#111111"
+    "primary": "#277487",
+    "light": "#83C1C1",
+    "dark": "#4F8F98"
   },
-  "favicon": "/favicon.svg",
+  "appearance": {
+    "default": "dark"
+  },
+  "fonts": {
+    "family": "Geist",
+    "heading": {
+      "family": "Geist",
+      "weight": 550
+    },
+    "body": {
+      "family": "Geist",
+      "weight": 400
+    }
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "background": {
+    "decoration": "gradient",
+    "color": {
+      "light": "#EDF7F5",
+      "dark": "#06252C"
+    }
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs",
+    "codeblocks": {
+      "theme": {
+        "light": "github-light",
+        "dark": "github-dark"
+      }
+    }
+  },
+  "favicon": "/logo/ambient-mark.png",
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -16,16 +50,20 @@
     "tabs": [
       {
         "tab": "Documentation",
+        "icon": "book-open",
         "groups": [
           {
             "group": "Get Started",
+            "icon": "rocket",
             "pages": [
+              "index",
               "quickstart",
               "introduction"
             ]
           },
           {
             "group": "Guides",
+            "icon": "waypoints",
             "pages": [
               "guides/memory",
               "guides/integrations",
@@ -35,12 +73,5 @@
         ]
       }
     ]
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Download App",
-      "href": "https://alexandria.so/download"
-    }
   }
 }
