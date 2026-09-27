@@ -1,62 +1,22 @@
 ---
 title: "Memory"
 sidebarTitle: "Memory"
-description: "Review what Ambient has learned from your work."
+description: "Review the durable context Ambient derives from recorded work."
+icon: "brain"
 ---
 
-Ambient memory is long-term context, not the live capture feed.
+Memory keeps durable notes derived from recorded work so useful context can persist beyond a single Activity thread.
 
-The intent loop writes durable Markdown notes when current evidence contains a useful project, person, or workflow fact. Those notes appear in **Memory** as a list or graph.
+## Use Memory
 
-## Review memory
+- Open **Memory** from the sidebar.
+- Use List, Gallery, or Graph views when available in your rollout.
+- Search for a project, person, workflow, decision, or recurring task.
+- Open a memory to inspect its details and supporting context.
+- Remove an incorrect memory; Ambient provides an undo opportunity after removal.
 
-Open **Memory** from the Ambient app.
+Memory is derived context, not a raw recording browser. Pausing recording prevents new source material from being captured during the pause, but does not delete existing Activity or Memory.
 
-Memory shows notes from the local `memories/` tree beside the active Ambient database. Notes are grouped into:
-
-- **Projects** for durable work, repos, products, and initiatives.
-- **People** for collaborators and relationship context.
-- **Workflows** for repeated processes and recurring ways of working.
-
-Open a note to inspect its body, related wikilinks, source evidence, confidence, and last update time.
-
-## Keep memory useful
-
-Memory is background context. Chunk evidence, intent state, and integration tool results remain the source of truth for handoff decisions.
-
-<Steps>
-  <Step title="Keep working">
-    Ambient builds context chunks and intents from the capture sources you enabled.
-  </Step>
-
-  <Step title="Let the intent loop run">
-    The intent loop reviews open intents and writes memory notes only when the evidence is durable enough.
-  </Step>
-
-  <Step title="Review notes">
-    Use **Memory** to confirm the durable facts are useful, specific, and not duplicated.
-  </Step>
-
-  <Step title="Tune inputs">
-    If memory is missing important facts, adjust capture or connect relevant app integrations. If memory is noisy, narrow capture or exclude private surfaces.
-  </Step>
-</Steps>
-
-## When to check memory
-
-- Before accepting a handoff that depends on long-running context.
-- After changing capture settings.
-- After a long debugging or research session.
-- When a handoff notification feels surprising.
-
-## Next
-
-<CardGroup cols={2}>
-  <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Connect private apps that can supply missing context.
-  </Card>
-
-  <Card title="Handoffs" icon="bell" href="/guides/handoffs">
-    See how memory informs reviewed handoffs.
-  </Card>
-</CardGroup>
+<Note>
+  Feature availability is organization-specific. Memory can remain enabled even when Agents, Skills, and Reports are hidden.
+</Note>

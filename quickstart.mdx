@@ -1,93 +1,42 @@
 ---
 title: "Install Ambient"
 sidebarTitle: "Installation"
-description: "Install Ambient, sign in, choose what to capture, and connect your coding agent."
-mode: "wide"
+description: "Install Ambient from your organization-specific link and configure recording."
+icon: "download"
 ---
 
-Ambient is currently invite-only. After you receive access, download Ambient App and complete the setup flow.
+Ambient is distributed through organization-specific rollout channels. Use the installer link your organization sent you.
 
-<iframe src="https://www.youtube.com/embed/Q1FPEWOeVD0" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-
-<Note>
-  Look for an invite email from Alexandria or `access@workos.dev`. If you do not see it, check your spam folder.
-</Note>
-
-## Install
+## Set up Ambient
 
 <Steps>
-  <Step title="Sign up">
-    Open your Ambient invite and create your account.
-
-    Ambient uses WorkOS for sign-in, so the access email may come from `access@workos.dev`.
+  <Step title="Open your organization-specific installer">
+    Download links are intentionally not published in these docs. If you cannot find yours, contact the person managing your rollout.
   </Step>
-  <Step title="Download Ambient">
-    Use the organization-specific download link shared in your rollout channel. Open the installer, then follow setup to install Bridge through Ambient.
-  </Step>
-  <Step title="Install Ambient App">
-    Open the Ambient App installer and launch Ambient.
-
-    On macOS, move Ambient to **Applications** if prompted. On Windows, follow the installer prompts.
-  </Step>
-  <Step title="Install Bridge through Ambient">
-    Ambient will guide you through installing Ambient Bridge.
-
-    Bridge handles WorkOS sign-in, local pairing, delegated integration tokens, and the network path Ambient uses for remote inference.
-  </Step>
-  <Step title="Sign in">
-    Sign in with the account from your invite.
-
-    Keep Bridge running after sign-in. Ambient App pairs with Bridge locally.
-  </Step>
-  <Step title="Choose capture sources">
-    Choose the local signals Ambient can use.
-
-    Screenshots stay enabled so Ambient can understand visible work. You can also enable microphone, system audio, keyboard metadata, active app/window, and accessibility context.
-  </Step>
-  <Step title="Exclude private activity">
-    Add apps, system-audio sources, and browser URL terms Ambient should skip.
-
-    Music, Spotify, TV, and common private web surfaces are skipped by default. You can add more during onboarding or later in **Permissions**.
+  <Step title="Install and sign in">
+    Launch Ambient and sign in with the account assigned to your organization. Ambient may install or connect its Bridge companion during setup.
   </Step>
   <Step title="Grant system access">
-    Grant the OS permissions Ambient asks for.
-
-    Depending on your capture choices, macOS may ask for screen recording, microphone, accessibility, input monitoring, and related access.
+    Allow the permissions required for the sources your organization uses. Depending on your platform and settings, this can include screen recording, microphone, accessibility, or input monitoring.
   </Step>
-  <Step title="Connect an agent">
-    Install Ambient's read-only `ambient-context` skill for Codex or Claude Code.
-
-    This is separate from app integrations. Codex and Claude Code are agent toolchains that can open handoffs; integrations are private apps Ambient can read during intent review.
+  <Step title="Choose capture sources">
+    Open **Settings** and review the enabled sources. Screen, microphone, system audio, keyboard activity, active app/window, and accessibility context can be controlled independently when available.
   </Step>
-  <Step title="Start working">
-    You're done.
-
-    Ambient runs in the background by default. Open **Feed** to see processed context chunks, or use the live recording overlay to inspect recent capture outputs.
+  <Step title="Add exclusions">
+    Exclude private apps and websites before you begin. Ambient also applies built-in exclusions and platform protections such as secure-input handling.
+  </Step>
+  <Step title="Confirm recording">
+    The sidebar capture card should say **Capturing**. If it says **Paused**, press **Start**. If it is blocked, follow the permission or sign-in message shown in the card.
   </Step>
 </Steps>
 
-## Optional setup
+## What to expect during rollout
 
-After the basics work, connect private apps that contain useful context.
+- Your organization controls which Ambient features are available.
+- Recording, **Activity**, and **Memory** can remain available when Agents, Skills, or Reports are disabled.
+- Some deployments use recorder mode: the device captures approved raw sources and uploads them for organization-managed processing instead of showing local derived results.
+- Ambient may show a calibration notice during the first 24 accumulated hours of active recording.
 
-<CardGroup cols={2}>
-  <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Connect Todoist, Notion, Gmail, Google Calendar, Granola, or Toggl Track.
-  </Card>
-
-  <Card title="Memory" icon="brain" href="/guides/memory">
-    Review durable project, person, and workflow notes.
-  </Card>
-</CardGroup>
-
-## Next
-
-<CardGroup cols={2}>
-  <Card title="Get started" icon="arrow-right" href="/introduction">
-    Learn what to do once Ambient is running.
-  </Card>
-
-  <Card title="Handoffs" icon="bell" href="/guides/handoffs">
-    Use Ambient to package work for an agent.
-  </Card>
-</CardGroup>
+<Warning>
+  Only record work approved by your organization. Review capture sources and exclusions whenever your work context changes.
+</Warning>

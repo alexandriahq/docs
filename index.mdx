@@ -1,74 +1,49 @@
 ---
 title: "Ambient"
 sidebarTitle: "Home"
-description: "Ambient runs in the background, learns your work, and gives coding agents the context they need to pick up where you left off."
+description: "Record work, review activity, and export selected timelines with Ambient."
+icon: "house"
 ---
 
-Ambient is a local context layer for your computer.
+Ambient records work on your computer so your organization can understand how real tasks get done.
 
-Install Ambient, choose what it can capture, then keep working. Ambient turns local activity into context chunks, maintains open intents, writes durable memory notes, and prepares handoffs when an agent can continue the work.
+During the current rollout, the main experience is recording: choose approved capture sources, pause whenever you need privacy, review recent activity, and export selected timelines. Your organization may hide assistant features such as Agents, Skills, or Reports.
 
 <CardGroup cols={2}>
   <Card title="Install Ambient" icon="download" href="/quickstart">
-    Download Ambient App, install Bridge through Ambient, and choose capture sources.
+    Use your organization-specific installer and finish setup.
   </Card>
 
-  <Card title="Get started" icon="arrow-right" href="/introduction">
-    Learn the main app surfaces after setup.
+  <Card title="Record and review" icon="circle-play" href="/introduction">
+    Start or pause recording, inspect Activity, and export timelines.
   </Card>
 
-  <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Connect private apps like Todoist, Notion, Gmail, Google Calendar, Granola, and Toggl Track.
+  <Card title="Memory" icon="brain" href="/guides/memory">
+    Understand the processed context Ambient keeps available locally.
   </Card>
 
-  <Card title="Handoffs" icon="bell" href="/guides/handoffs">
-    Review agent-ready tasks before sending them to Codex or Claude Code.
+  <Card title="Privacy and integrations" icon="shield-check" href="/guides/integrations">
+    Choose capture sources, exclusions, and connected services.
   </Card>
 </CardGroup>
 
-## How it works
-
-Ambient separates capture, memory, integrations, and handoffs.
+## The recording workflow
 
 <Steps>
-  <Step title="Download Ambient">
-    Use the organization-specific download link shared in your rollout channel. Open the installer, then follow setup to install Bridge through Ambient.
-
-    Ambient guides you through installing Bridge during setup. Bridge owns sign-in and network egress; Ambient App owns local capture, storage, processing, memory, and handoffs.
+  <Step title="Install from your rollout channel">
+    Use the organization-specific link shared with your team. Public documentation does not contain product download URLs.
   </Step>
-  <Step title="Choose what to capture">
-    Enable local sources such as screen, microphone, system audio, keyboard metadata, active app/window, and accessibility context.
-
-    Exclude private apps, media apps, and browser URLs before capture starts.
+  <Step title="Choose what Ambient can record">
+    Grant the requested system permissions and configure capture sources and exclusions in **Settings**.
   </Step>
-  <Step title="Build context">
-    Ambient writes redacted recording outputs, groups them into context chunks, and tracks open intents over time.
+  <Step title="Keep the capture card visible">
+    The sidebar shows whether Ambient is capturing, paused, starting, blocked, or waiting for processing.
   </Step>
-  <Step title="Hand off work">
-    When an intent is specific enough for an agent, Ambient creates a reviewed handoff with ordered steps.
+  <Step title="Review and export">
+    Open **Activity** to review processed threads. Use **Export** to save selected recorded timelines as JSONL.
   </Step>
 </Steps>
 
-## What you can do next
-
-<CardGroup cols={3}>
-  <Card title="Install Ambient" icon="download" href="/quickstart">
-    Finish setup in a few minutes.
-  </Card>
-
-  <Card title="Review memory" icon="book-open" href="/guides/memory">
-    Inspect long-term project, person, and workflow notes.
-  </Card>
-
-  <Card title="Connect apps" icon="plug" href="/guides/integrations">
-    Let Ambient read private app context during intent review.
-  </Card>
-
-  <Card title="Use handoffs" icon="share" href="/guides/handoffs">
-    Accept, refine, or deny agent-ready work.
-  </Card>
-</CardGroup>
-
 <Note>
-  Ambient is currently invite-only. If you have an invite, check your inbox and spam folder for an email from Alexandria or `access@workos.dev`.
+  Ambient calibrates during roughly the first 24 hours of accumulated recording time. Paused time, sleep, and time while the app is closed do not count.
 </Note>

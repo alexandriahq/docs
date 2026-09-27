@@ -1,66 +1,19 @@
 ---
-title: "Handoffs"
-sidebarTitle: "Handoffs"
-description: "Use Ambient handoffs to give agents the context they need to continue your work."
+title: "Optional assistant features"
+sidebarTitle: "Optional features"
+description: "Understand organization-controlled Agents, Skills, and Reports."
+icon: "toggle-right"
 ---
 
-Handoffs are agent-ready packets of work.
+Ambient can also turn recorded context into agent tasks, reusable Skills, and daily Reports. These features are secondary to the current recording rollout and may be hidden for your organization.
 
-When the intent loop sees an intent with a clear goal, current state, enough evidence, and a concrete next step, it creates a pending handoff. You review it before anything opens in an agent.
+- **Agents** can prepare reviewed tasks from Activity context.
+- **Skills** can capture reusable steps from completed work.
+- **Reports** can summarize a day and, when separately permitted, be shared through approved destinations.
+- **Integrations** and **Automations** have their own organization controls.
 
-## How handoffs work
-
-<Steps>
-  <Step title="Ambient maintains intents">
-    Ambient turns processed context chunks into open intents and keeps their summaries, goals, blockers, and status up to date.
-  </Step>
-
-  <Step title="Ambient checks context">
-    The intent loop can use memory and connected read-only integrations before deciding whether the task is ready.
-  </Step>
-
-  <Step title="Ambient creates steps">
-    A handoff contains two to six ordered steps with concrete evidence, paths, names, constraints, and verification work.
-  </Step>
-
-  <Step title="You decide">
-    Accept the handoff to open it in your configured agent, or deny it so Ambient does not keep asking on the same evidence.
-  </Step>
-</Steps>
-
-## Review a handoff
-
-Before accepting a handoff, check:
-
-- the goal is clear;
-- the context is relevant;
-- private or unrelated details are not included;
-- each step is executable without asking you for missing information.
-
-If a step is close but not right, add feedback on that step and let Ambient refine the handoff before accepting it.
-
-You can also rate the handoff from 1 to 5 and leave overall feedback. Feedback upload is best-effort and does not block your local decision.
-
-## Use handoffs well
-
-Handoffs work best when Ambient has enough evidence for an agent to continue independently.
-
-Good examples include continuing a coding task, investigating a bug, writing a follow-up change, researching a public blocker, summarizing recent work, or preparing a concrete next step from a messy thread of activity.
-
-Coding handoffs need a project or repository path, the feature or bug goal, the relevant current behavior or failure state, and known constraints or decisions.
+Disabling an optional feature does not delete existing data. Recording, redaction, Activity, intent maintenance, and Memory can continue independently.
 
 <Note>
-  Agent setup is separate from app integrations. Codex and Claude Code receive handoffs through Ambient's read-only `ambient-context` skill. Apps like Todoist and Notion are integrations that Ambient can read while preparing the handoff.
+  If an optional page is absent from the sidebar, this normally reflects your organization's rollout configuration rather than an installation problem.
 </Note>
-
-## Next
-
-<CardGroup cols={2}>
-  <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Learn the difference between agent toolchains and app integrations.
-  </Card>
-
-  <Card title="Review memory" icon="brain" href="/guides/memory">
-    Understand the durable notes behind long-running context.
-  </Card>
-</CardGroup>

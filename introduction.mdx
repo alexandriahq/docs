@@ -1,85 +1,55 @@
 ---
-title: "Get started"
-sidebarTitle: "Get started"
-description: "Start using Ambient after installation."
+title: "Record and review"
+sidebarTitle: "Record and review"
+description: "Start, pause, review, and export Ambient recordings."
+icon: "circle-play"
 ---
 
-Once setup is complete, Ambient runs by default.
+The sidebar capture card is the quickest way to understand and control recording.
 
-You do not need to start a session manually. Keep working and Ambient will process the capture sources you enabled into context chunks, intents, memory notes, and handoffs.
+## Pause and start recording
 
-## What to do next
+When Ambient is recording, press **Pause** below the capture card. A normal pause waits until you press **Start** again and survives an app restart.
 
-<CardGroup cols={2}>
-  <Card title="Watch the feed" icon="inbox" href="#daily-workflow">
-    Review processed context chunks grouped by intent.
-  </Card>
+Use the arrow beside **Pause** for a timed pause:
 
-  <Card title="Open live recording overlay" icon="up-right-from-square" href="#watch-capture-live">
-    Inspect recent recording outputs without opening the full app.
-  </Card>
+- **For 15 minutes**
+- **For 1 hour**
+- **Until tomorrow morning** — resumes at 08:00 local time
 
-  <Card title="Check memory" icon="book-open" href="/guides/memory#review-memory">
-    Review long-term notes Ambient wrote from durable evidence.
-  </Card>
+While paused, the card shows when recording will resume. Press **Start** at any time to resume immediately. Your individual source settings stay unchanged, so Ambient resumes only the sources that were previously enabled.
 
-  <Card title="Use handoffs" icon="bell" href="/guides/handoffs">
-    Accept, refine, or deny ready-for-handoff intents.
-  </Card>
-</CardGroup>
+You can also control recording from the Windows/Linux tray, the macOS Dock menu, the live-recording control, or **Settings → Capture**. A timed pause resumes after sleep or after reopening Ambient if its resume time has passed.
 
-## Daily workflow
+<Note>
+  Permission problems, sign-out, setup, or an update can block recording independently of your Start/Pause choice. Follow the message in the capture card when **Start** does not resume capture.
+</Note>
+
+## Review Activity
+
+Open **Activity** to see processed threads built from recent recorded work. A thread groups related observations over time. Activity can continue to work even when assistant features are disabled for your organization.
+
+The capture card distinguishes local recording from processing. If it says **Capturing locally** or **Processing paused**, recording may still be continuing while derived Activity is delayed.
+
+## Export activity
 
 <Steps>
-  <Step title="Work normally">
-    Use your editor, browser, terminal, meetings, and docs as usual.
-
-    Ambient observes the sources you enabled and writes local recording outputs.
+  <Step title="Open Activity">
+    Wait for the threads you need to appear. Load earlier threads first if you want them included.
   </Step>
-
-  <Step title="Check Feed">
-    Open **Feed** to see processed context chunks.
-
-    Chunks are the short summaries Ambient creates from recent capture outputs. When a chunk is linked to an intent, Feed groups it under that intent.
+  <Step title="Choose Export">
+    Select **Export** in the Activity header.
   </Step>
-
-  <Step title="Connect private app context">
-    Open **Integrations** to connect apps like Todoist, Notion, Gmail, Google Calendar, Granola, and Toggl Track.
-
-    During intent review, Ambient can use read-only integration tools before deciding that information is missing.
+  <Step title="Select threads">
+    Ambient selects the currently loaded threads by default. Check or uncheck individual threads; one export can include up to 200.
   </Step>
-
-  <Step title="Respond to handoff notifications">
-    When Ambient creates a handoff, review the ordered steps.
-
-    Accept it to open the task in your configured agent, or deny it if the work should stay with you.
+  <Step title="Save the JSONL file">
+    Choose **Export selected threads**, then select where to save it. Ambient shows progress and lets you cancel before completion.
   </Step>
 </Steps>
 
-## Watch capture live
+Each exported thread contains a metadata record followed by its ordered observations and any handoff proposals. The export contains readable processed activity text and may contain sensitive information. It does not include screenshot or audio files.
 
-Use the live recording overlay when you want visibility into capture itself.
-
-The overlay shows recent finalized recording outputs such as active app/window changes, screen-derived text, audio transcripts, and keyboard activity metadata. It is a capture monitor, not the long-term memory view.
-
-On supported platforms, Ambient uses a native glass overlay. Otherwise it falls back to an HTML overlay window.
-
-<Note>
-  Ambient only captures sources you enable and skips the apps, audio sources, and browser URLs you exclude. Update those rules from **Permissions**.
-</Note>
-
-## Next
-
-<CardGroup cols={3}>
-  <Card title="Memory" icon="brain" href="/guides/memory">
-    Understand and review Ambient memory.
-  </Card>
-
-  <Card title="Integrations" icon="plug" href="/guides/integrations">
-    Connect private apps Ambient can read.
-  </Card>
-
-  <Card title="Handoffs" icon="share" href="/guides/handoffs">
-    Review agent-ready work.
-  </Card>
-</CardGroup>
+<Warning>
+  Review exported files before sharing them. An export can include activity captured when redaction was disabled.
+</Warning>

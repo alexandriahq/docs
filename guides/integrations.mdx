@@ -1,83 +1,33 @@
 ---
-title: "Integrations"
-sidebarTitle: "Integrations"
-description: "Connect private apps that Ambient can read during intent review."
+title: "Privacy, sources, and integrations"
+sidebarTitle: "Privacy and sources"
+description: "Control what Ambient records and understand where data can go."
+icon: "shield-check"
 ---
 
-Integrations are app connections Ambient can read for private context.
+Open **Settings** to review capture before recording sensitive work.
 
-They are not Codex or Claude Code connections. Codex and Claude Code are agent toolchains for handoffs. Integrations are apps such as Todoist, Notion, Gmail, Google Calendar, Granola, and Toggl Track that Ambient can query while maintaining intents.
+## Capture controls
 
-## Supported apps
+Ambient can use sources such as screen, microphone, system audio, keyboard activity, active app/window, accessibility context, and approved agent conversations. Availability depends on platform, organization policy, and system permissions.
 
-Ambient currently exposes first-party integration toolkits for:
+Turning off a source stops future capture from that source. The master **Start/Pause** control stops or resumes all enabled sources without changing the individual toggles.
 
-- **Todoist** for tasks, projects, labels, and due dates.
-- **Notion** for pages, databases, project notes, and workspace search.
-- **Gmail** for email threads, senders, unread context, and message search.
-- **Google Calendar** for calendars, events, attendees, and meeting times.
-- **Granola** for meeting notes, transcripts, decisions, and action items.
-- **Toggl Track** for time entries, projects, clients, and workspaces.
+## Exclusions
 
-## Connect an app
+Add apps and websites that Ambient should skip. Built-in exclusions and platform protections still apply. Check exclusions whenever you change browsers, applications, or work environments.
 
-<Steps>
-  <Step title="Open integrations">
-    In Ambient, open **Integrations** from the sidebar.
-  </Step>
+## Storage and processing
 
-  <Step title="Choose an app">
-    Select a toolkit such as **Todoist**, **Notion**, **Gmail**, **Google Calendar**, **Granola**, or **Toggl Track**.
-  </Step>
+- Standard deployments keep capture artifacts and processed context locally and use remote services only as configured for processing and integrations.
+- Local files and exported backups are not currently described as encrypted by Ambient.
+- Recorder-mode deployments can upload approved raw capture sources to organization-managed infrastructure for later processing. On-device exclusions still run before an artifact exists.
+- Uploading in recorder mode does not immediately delete the local artifact; local retention and the organization rollout determine its lifecycle.
 
-  <Step title="Authorize the connection">
-    Ambient asks Bridge for a scoped integration token and opens the provider authorization flow.
+## Connected services
 
-    Keep Bridge running while the connection completes.
-  </Step>
-
-  <Step title="Verify the connection">
-    Return to **Integrations** and confirm the app shows an active connection.
-  </Step>
-</Steps>
-
-## How Ambient uses integrations
-
-During the intent loop, Ambient can use connected integrations before deciding that an intent is blocked by private information.
-
-For example:
-
-- meeting or scheduling questions may need Google Calendar;
-- email commitments may need Gmail;
-- open tasks or deadlines may need Todoist;
-- specs or durable notes may need Notion;
-- meeting decisions may need Granola;
-- recent project time context may need Toggl Track.
-
-Ambient searches the available read tools, loads the needed schema, and executes read-only calls. Results are used to refine intent summaries, blockers, memory candidates, and handoff readiness.
+If enabled, integrations can provide read-only context from services such as Gmail, Google Calendar, Notion, Todoist, Granola, or Toggl Track. Integrations do not automatically enable recording sources, and recording permissions do not automatically connect integrations.
 
 <Warning>
-  Integration reads may contain private account data. Ambient should use only relevant context and should not copy unrelated private content into handoff instructions.
+  Your organization determines its capture, processing, sharing, and retention policy. Ask your rollout owner when a setting or data destination is unclear.
 </Warning>
-
-## Manage an integration
-
-Use **Integrations** to reconnect or disconnect an app.
-
-The server controls the supported toolkit allowlist and the read-only tool policy. Write actions are blocked by default.
-
-<Note>
-  Toggl Track summaries are managed under **Automations**. When enabled, Ambient can summarize processed context that overlaps Toggl time entries and write that summary into the entry description.
-</Note>
-
-## Next
-
-<CardGroup cols={2}>
-  <Card title="Memory" icon="brain" href="/guides/memory">
-    See how durable notes differ from integration reads.
-  </Card>
-
-  <Card title="Handoffs" icon="share" href="/guides/handoffs">
-    Review how private app context can inform a handoff.
-  </Card>
-</CardGroup>
