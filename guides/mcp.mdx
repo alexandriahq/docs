@@ -1,0 +1,50 @@
+---
+title: "Connect Ambient to an agent"
+sidebarTitle: "Ambient MCP"
+description: "Give an AI agent read-only access to the processed context Ambient makes available."
+icon: "plug-zap"
+---
+
+Ambient includes a local Model Context Protocol (MCP) server. It lets compatible AI agents search and read the processed context Ambient has made eligible for agent use.
+
+Ambient does not install this connection into your agent automatically. Ambient must be running, and you must ask the agent to add the server to its MCP configuration.
+
+## Connect your agent
+
+Send this message to the agent you want to connect:
+
+```text
+Connect yourself to Ambient's local MCP server at http://127.0.0.1:8765/mcp.
+Add it to your MCP configuration as a Streamable HTTP server named "ambient".
+Then verify the connection by listing the available tools and explain in plain
+language what each tool can do. Use only the processed, privacy-eligible context
+exposed by Ambient. Do not look for Ambient's private database, raw recordings,
+capture artifacts, or other corpus data.
+```
+
+Your agent may ask you to approve a configuration change or restart its session. Follow the agent's instructions, then ask it to check Ambient's `status` tool.
+
+## What the MCP can do
+
+The connection is read-only. Depending on the context available in your Ambient rollout, an agent can:
+
+- Check whether Ambient context is available.
+- List eligible chunks, intents, and memories.
+- Search processed context by keywords and, when available, meaning.
+- Open a specific context item.
+- Follow links between related context items.
+- Validate that the eligible context is available.
+
+The MCP does not let an agent change Ambient data. It does not provide access to Ambient's private database, raw recordings, screenshots, audio, or capture artifacts.
+
+## If it does not connect
+
+- Keep the Ambient application open while the agent uses the MCP.
+- Confirm the URL is exactly `http://127.0.0.1:8765/mcp`.
+- Ask the agent to reconnect or restart after it changes its MCP configuration.
+- Ask the agent to call `status` before searching.
+- If the connection is refused, restart Ambient and try again.
+
+<Note>
+  The server listens only on your computer's loopback interface. Other devices on your network cannot connect to it.
+</Note>

@@ -29,7 +29,8 @@
             "pages": [
               "guides/memory",
               "guides/integrations",
-              "guides/handoffs"
+              "guides/handoffs",
+              "guides/mcp"
             ]
           }
         ]
