@@ -27,4 +27,4 @@ View your local preview at `http://localhost:3000`.
 
 ## Publishing changes
 
-Mintlify deploys changes from the connected GitHub repository. The primary download button is configured in `docs.json`.
+Mintlify deploys changes from the connected GitHub repository. Product download links are distributed privately to each organization and must not be added to the public docs.
